@@ -1,10 +1,23 @@
+import Link from "next/link";
 import styles from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar = ({ data, title, logo }) => {
   return (
-    <header className={styles.header}>
-      <h1>ნავიგაციის პანელი</h1>
-    </header>
+    <nav className={styles.header}>
+      <div className={styles.navbarContainer}>
+        <Link href="/" className={styles.navbarLogo}>
+          <span className={styles.logoMark}>{logo}</span>
+          <span>{title}</span>
+        </Link>
+        <div className={styles.navbarMenu}>
+          {data.map((item) => (
+            <div className={styles.navbarItem} key={item.id}>
+              <Link href={item.url}>{item.name}</Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </nav>
   );
 };
 

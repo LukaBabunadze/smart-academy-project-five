@@ -1,9 +1,13 @@
 import styles from "./Footer.module.css";
 
-const Footer = () => {
+const Footer = ({ list }) => {
   return (
     <footer className={styles.footer}>
-      <h3>Footer</h3>
+      {list.map((item) => (
+        <div key={item.id} className={styles.footerItem}>
+          <p className={styles.itemTitle}>{item.name}</p>
+        </div>
+      ))}
     </footer>
   );
 };
