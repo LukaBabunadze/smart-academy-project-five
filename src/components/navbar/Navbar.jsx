@@ -16,6 +16,10 @@ const Navbar = ({ data, title, logo }) => {
             </div>
           ))}
         </div>
+        <Link href="/" className={styles.navbarLogo}>
+          <span className={styles.logoMark}>{logo}</span>
+          <span>{title}</span>
+        </Link>
       </div>
     </nav>
   );
