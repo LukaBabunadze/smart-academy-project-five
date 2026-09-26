@@ -17,17 +17,17 @@ const Navbar = ({ data, title, logo }) => {
           ))}
         </div>
         <Link href="/" className={styles.navbarLogo}>
-          <span className={styles.logoMark}>{logo}</span>
-          <span>{title}</span>
+          <span className={styles.logoMark}>{logo}1</span>
+          <span>{title}2</span>
         </Link>
         <Link href="/" className={styles.navbarLogo}>
-          <span className={styles.logoMark}>{logo}</span>
-          <span>{title}</span>
+          <span className={styles.logoMark}>{logo}3</span>
+          <span>{title}4</span>
         </Link>
-        <span>{title}</span>
-        <span>{title}</span>
-        <span>{title}</span>
-        <span>{title}</span>
+        <span>{title}1</span>
+        <span>{title}2</span>
+        <span>{title}3</span>
+        <span>{title}4</span>
       </div>
     </nav>
   );
