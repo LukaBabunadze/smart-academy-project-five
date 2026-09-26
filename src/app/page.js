@@ -17,8 +17,9 @@ const footerItems = [
 export default function Home() {
   return (
     <div className={styles.page}>
-      <Navbar data={navbarItems} title={"My First Website"} logo={"M"} />
-      <p>გამარჯობა, როგორ ხართ?</p>
+      <Navbar data={navbarItems} title={"My First Website"} logo={"M"} /> 
+      <div>main page content</div>
+      <button>this is button</button>
       <Footer list={footerItems} />
     </div>
   );
