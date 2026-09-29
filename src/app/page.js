@@ -1,26 +1,26 @@
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
+"use client";
+
 import styles from "./page.module.css";
-
-const navbarItems = [
-  { id: 1, name: "Home", url: "/home" },
-  { id: 2, name: "About", url: "/about" },
-  { id: 3, name: "Contact", url: "/contact" },
-];
-
-const footerItems = [
-  { id: 1, name: "Privacy Policy" },
-  { id: 2, name: "Terms of Service" },
-  { id: 3, name: "Contact" },
-];
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [products, setProducts] = useState(null);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((result) => setProducts(result));
+  }, []);
+
+  if (products === null) {
+    return <div>იტვირთებაააააა...</div>;
+  }
+
   return (
     <div className={styles.page}>
-      <Navbar data={navbarItems} title={"My First Website"} logo={"M"} /> 
-      <div>main page content</div>
-      <button>this is button</button>
-      <Footer list={footerItems} />
+      {products?.map((item) => (
+        <div key={item.id}>{item.title}</div>
+      ))}
     </div>
   );
 }

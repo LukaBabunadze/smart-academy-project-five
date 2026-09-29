@@ -16,15 +16,6 @@ const Navbar = ({ data, title, logo }) => {
             </div>
           ))}
         </div>
-        <Link href="/" className={styles.navbarLogo}>
-          <span className={styles.logoMark}>{logo}4</span>
-          <span>{title}3</span>
-        </Link>
-        <Link href="/" className={styles.navbarLogo}>
-          <span className={styles.logoMark}>{logo}5</span>
-        </Link>
-        <span>{title}7</span>
-        <span>{title}8</span>
       </div>
     </nav>
   );
