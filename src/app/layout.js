@@ -19,7 +19,8 @@ export const metadata = {
 };
 
 const navbarItems = [
-  { id: 1, name: "Home", url: "/home" },
+  { id: 1, name: "Home", url: "/" },
+  { id: 4, name: "Cart", url: "/cart" },
   { id: 2, name: "About", url: "/about" },
   { id: 3, name: "Contact", url: "/contact" },
 ];

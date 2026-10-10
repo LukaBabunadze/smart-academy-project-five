@@ -15,6 +15,12 @@
   gap: 32px;
 }
 
+.activeItem a {
+  border-color: #f4b942;
+  background: #7786a5;
+  color: #ffffff;
+}
+
 .navbarLogo {
   display: inline-flex;
   align-items: center;

@@ -1,0 +1,142 @@
+.page {
+  min-height: 100vh;
+  padding: 72px 24px;
+  background: #f3f0e9;
+  color: #252522;
+}
+
+.product {
+  display: grid;
+  width: min(100%, 1080px);
+  min-height: 620px;
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  overflow: hidden;
+  border: 1px solid #ded9cf;
+  background: #fbfaf7;
+  box-shadow: 0 20px 60px rgb(57 50 38 / 10%);
+}
+
+.imagePanel {
+  display: grid;
+  min-height: 620px;
+  padding: 64px;
+  place-items: center;
+  background: #e7e2d8;
+}
+
+.image {
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 64px;
+}
+
+.category {
+  margin: 0 0 20px;
+  color: #8a7252;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.details h2 {
+  max-width: 430px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.description {
+  max-width: 430px;
+  margin: 28px 0 0;
+  color: #6f6b63;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 430px;
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 1px solid #ded9cf;
+}
+
+.price,
+.rating {
+  margin: 0;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.rating {
+  color: #8a7252;
+  font-size: 14px;
+}
+
+.button {
+  width: fit-content;
+  margin-top: 36px;
+  padding: 14px 28px;
+  border: 0;
+  background: #252522;
+  color: #fbfaf7;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.button:hover {
+  background: #8a7252;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 24px 16px;
+  }
+
+  .product {
+    display: block;
+    min-height: auto;
+  }
+
+  .imagePanel {
+    min-height: 340px;
+    padding: 32px;
+  }
+
+  .image {
+    max-height: 280px;
+  }
+
+  .details {
+    padding: 40px 28px 44px;
+  }
+
+  .meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
