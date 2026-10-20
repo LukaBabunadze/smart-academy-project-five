@@ -1,0 +1,267 @@
+.page {
+  min-height: 100vh;
+  padding: 72px 24px;
+  background: #f3f0e9;
+  color: #252522;
+}
+
+.cart {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  border: 1px solid #ded9cf;
+  background: #fbfaf7;
+  box-shadow: 0 20px 60px rgb(57 50 38 / 10%);
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 56px 64px 40px;
+  border-bottom: 1px solid #ded9cf;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: #8a7252;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.itemCount {
+  padding: 9px 14px;
+  border: 1px solid #ded9cf;
+  border-radius: 999px;
+  color: #6f6b63;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.products {
+  margin: 0;
+  padding: 8px 64px;
+  list-style: none;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid #e8e3da;
+}
+
+.product:last-child {
+  border-bottom: 0;
+}
+
+.imageWrap {
+  display: grid;
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
+  padding: 12px;
+  place-items: center;
+  background: #f0ece4;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.productInfo {
+  min-width: 0;
+  flex: 1;
+}
+
+.productInfo h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.productInfo p {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  color: #6f6b63;
+  font-size: 14px;
+}
+
+.productInfo span {
+  margin: 0 2px;
+  color: #b3aa9c;
+}
+
+.quantityButton,
+.removeButton {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.quantityButton {
+  padding: 7px 10px;
+  border-color: #ded9cf;
+  background: #fbfaf7;
+  color: #6f6b63;
+}
+
+.quantityButton:hover {
+  border-color: #8a7252;
+  background: #f0ece4;
+  color: #252522;
+  transform: translateY(-1px);
+}
+
+.removeButton {
+  margin-left: 6px;
+  padding: 7px 10px;
+  background: transparent;
+  color: #9a5d50;
+}
+
+.removeButton:hover {
+  background: #f6e9e5;
+  color: #7d3f34;
+  transform: translateY(-1px);
+}
+
+.quantityButton:focus-visible,
+.removeButton:focus-visible {
+  outline: 2px solid #8a7252;
+  outline-offset: 3px;
+}
+
+.productTotal {
+  color: #252522;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.footer {
+  padding: 28px 64px 36px;
+  border-top: 1px solid #ded9cf;
+}
+
+.totalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: #6f6b63;
+  font-size: 14px;
+}
+
+.totalRow + .totalRow {
+  margin-top: 14px;
+  color: #252522;
+  font-size: 18px;
+}
+
+.totalRow strong {
+  color: inherit;
+  font-weight: 600;
+}
+
+.empty {
+  padding: 80px 24px 96px;
+  text-align: center;
+}
+
+.emptyIcon {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f0ece4;
+  color: #8a7252;
+  font-size: 28px;
+}
+
+.empty h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.empty p {
+  margin: 12px 0 0;
+  color: #6f6b63;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 24px 16px;
+  }
+
+  .header,
+  .products,
+  .footer {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 36px;
+    padding-bottom: 28px;
+  }
+
+  .product {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .imageWrap {
+    width: 64px;
+    height: 64px;
+    padding: 8px;
+  }
+
+  .productInfo h2 {
+    font-size: 14px;
+  }
+
+  .productInfo p {
+    gap: 6px;
+  }
+
+  .removeButton {
+    margin-left: 0;
+  }
+
+  .productTotal {
+    font-size: 14px;
+  }
+}

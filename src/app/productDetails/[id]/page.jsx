@@ -3,10 +3,14 @@
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
+import { useAppDispatch } from "@/lib/hooks";
+import { addToCart } from "@/lib/slices/cartSlice";
 
 function page() {
   const { id } = useParams();
   const router = useRouter();
+  const dispatch = useAppDispatch();
+
   const [product, setProduct] = useState(null);
 
   const fetchProductDetails = async () => {
@@ -33,6 +37,10 @@ function page() {
     }
   };
 
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
+
   if (product === null) {
     return <div>loading....</div>;
   }
@@ -55,6 +63,9 @@ function page() {
             <p className={styles.price}>${product.price}</p>
             <p className={styles.rating}>{product.rating.rate} / 5 rating</p>
           </div>
+          <button className={styles.button} onClick={handleAddToCart}>
+            Add to Cart
+          </button>
           <button className={styles.button} onClick={handleDeleteProduct}>
             Delete
           </button>

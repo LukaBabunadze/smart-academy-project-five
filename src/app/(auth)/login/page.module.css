@@ -1,0 +1,137 @@
+.pageShell {
+  display: grid;
+  min-height: calc(100vh - 188px);
+  place-items: center;
+  padding: 64px 20px;
+  background:
+    radial-gradient(circle at 15% 20%, rgb(244 185 66 / 10%), transparent 28%),
+    linear-gradient(135deg, #f5f7fb 0%, #e8edf5 100%);
+}
+
+.form {
+  width: min(100%, 430px);
+  padding: clamp(30px, 6vw, 52px);
+  border: 1px solid rgb(39 52 73 / 12%);
+  border-radius: 16px;
+  background: rgb(255 255 255 / 94%);
+  box-shadow: 0 24px 60px rgb(23 32 51 / 16%);
+}
+
+.heading {
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: #b27b08;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.heading h3 {
+  margin: 0 0 10px;
+  color: #172033;
+  font-size: clamp(30px, 5vw, 38px);
+  line-height: 1.05;
+}
+
+.heading p {
+  margin: 0;
+  color: #667085;
+  font-size: 15px;
+}
+
+.fieldGroup {
+  display: grid;
+  gap: 12px;
+}
+
+.input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1px solid #cbd3df;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172033;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.input::placeholder {
+  color: #8b96a8;
+}
+
+.input:focus {
+  border-color: #f4b942;
+  box-shadow: 0 0 0 4px rgb(244 185 66 / 20%);
+}
+
+.error {
+  margin: -4px 0 0;
+  color: #b42318;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.passwordToggle {
+  width: fit-content;
+  margin: 14px 0 24px auto;
+  color: #5f6c80;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  transition: color 160ms ease;
+}
+
+.passwordToggle:hover {
+  color: #b27b08;
+}
+
+.passwordToggle:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid rgb(244 185 66 / 45%);
+  outline-offset: 3px;
+}
+
+.submitButton {
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  border-radius: 8px;
+  background: #172033;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.submitButton:hover {
+  background: #253149;
+  transform: translateY(-1px);
+}
+
+.submitButton:focus-visible {
+  outline: 3px solid rgb(244 185 66 / 65%);
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .pageShell {
+    min-height: calc(100vh - 248px);
+    padding: 36px 14px;
+  }
+
+  .form {
+    padding: 30px 22px;
+  }
+}

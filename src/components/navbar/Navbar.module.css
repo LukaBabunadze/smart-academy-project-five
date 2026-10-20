@@ -55,6 +55,7 @@
   display: inline-flex;
   min-height: 40px;
   align-items: center;
+  gap: 8px;
   padding: 0 15px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -67,12 +68,31 @@
     color 160ms ease;
 }
 
+.cartBadge {
+  display: inline-grid;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  place-items: center;
+  border-radius: 999px;
+  background: #f4b942;
+  color: #172033;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+}
+
 .navbarItem a:hover,
 .navbarItem a:focus-visible {
   border-color: #3a4960;
   background: #253149;
   color: #ffffff;
   outline: none;
+}
+
+.navbarItem a:hover .cartBadge,
+.navbarItem a:focus-visible .cartBadge {
+  background: #ffd36d;
 }
 
 .navbarLogo:focus-visible {
