@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import { useAppDispatch } from "@/lib/hooks";
 import { addToCart } from "@/lib/slices/cartSlice";
 
-function page() {
+function Page() {
   const { id } = useParams();
   const router = useRouter();
   const dispatch = useAppDispatch();
@@ -75,4 +75,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

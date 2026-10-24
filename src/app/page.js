@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <p className={styles.eyebrow}>Featured products</p>
+        <p className={styles.eyebrow}>Featured products!</p>
         <h1>Find something you love</h1>
         <p className={styles.subtitle}>
           A simple selection of everyday favorites.
