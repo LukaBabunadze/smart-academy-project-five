@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 function page() {
+  const router = useRouter();
   const [user, setUser] = useState(null);
 
   const fetchUser = async () => {
@@ -43,6 +45,11 @@ function page() {
     }
   };
 
+  const handleUserLogout = () => {
+    localStorage.removeItem("user");
+    router.push("/login");
+  }
+
   if (user === null) {
     return <div>Loading user data...</div>;
   }
@@ -54,6 +61,7 @@ function page() {
       <p>Last Name: {user.lastName}</p>
       <p>Phone: {user.phone}</p>
       <button onClick={handleDeleteUser}>delete</button>
+      <button onClick={handleUserLogout}>log out</button>
     </div>
   );
 }

@@ -48,6 +48,7 @@ const page = () => {
       const result = await response.json();
 
       if (result.token) {
+        localStorage.setItem("user", JSON.stringify(result.token));
         router.push("/");
       } else {
         return alert("Invalid username or password. Please try again.");

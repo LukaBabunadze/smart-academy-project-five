@@ -3,16 +3,30 @@
 import styles from "./page.module.css";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { checkUser, checkLocalProducts } from "../helpers";
 
 export default function Home() {
   const router = useRouter();
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((result) => setProducts(result))
-      .catch((err) => console.log(err));
+    const isUserLoggedIn = checkUser();
+    if (!isUserLoggedIn) {
+      router.push("/login");
+    }
+
+    const localProducts = checkLocalProducts();
+    if (localProducts !== false) {
+      setProducts(localProducts);
+    } else {
+      fetch("https://fakestoreapi.com/products")
+        .then((response) => response.json())
+        .then((result) => {
+          localStorage.setItem("products", JSON.stringify(result));
+          return setProducts(result);
+        })
+        .catch((err) => console.log(err));
+    }
   }, []);
 
   const handleGoToProductDetails = (id) => {
